@@ -554,12 +554,20 @@ video {
   --tw-contain-style:  ;
 }
 
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
 }
 
-.mb-\[7rem\] {
-  margin-bottom: 7rem;
+.mb-\[4rem\] {
+  margin-bottom: 4rem;
+}
+
+.mb-\[6\.7rem\] {
+  margin-bottom: 6.7rem;
 }
 
 .ml-\[2rem\] {
@@ -596,10 +604,6 @@ video {
 
 .mt-\[9\%\] {
   margin-top: 9%;
-}
-
-.mb-\[6\.7rem\] {
-  margin-bottom: 6.7rem;
 }
 
 .flex {
@@ -650,10 +654,6 @@ video {
   height: 5rem;
 }
 
-.min-h-\[100vh\] {
-  min-height: 100vh;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -674,8 +674,20 @@ video {
   width: 7.5rem;
 }
 
+.w-\[7rem\] {
+  width: 7rem;
+}
+
 .w-auto {
   width: auto;
+}
+
+.w-\[9rem\] {
+  width: 9rem;
+}
+
+.w-\[6rem\] {
+  width: 6rem;
 }
 
 .translate-x-\[0\] {

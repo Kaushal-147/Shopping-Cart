@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="loaderStyle.css" />
         <link rel="stylesheet" href="output.css" />
         <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,8 +12,9 @@
         <script src="script.js"></script>
         <title>YourShop</title>
     </head>
-    <body>
-        <div class="min-h-screen">
+    <body onload="removeLoader()">
+        <div id="loader" class="center "></div>
+        <div class="min-h-screen invisible" id="content" >
 
 
             <div class="navBar flex flex-row justify-between h-[5rem] items-center sticky border-b-[0.1rem] border-gray-100 rounded-xl text-[1.1rem]">
@@ -39,16 +40,16 @@
                 </div>
                 <div class="nav-last flex flex-row items-center space-x-[1.5rem] mr-[1.4rem]">
                     <div class="hover:bg-gray-200 h-[3rem] w-[3rem] items-center flex rounded-full align-middle justify-center cursor-pointer">
-                        <img src="./images/shopping-cart.png" alt="cart" class="h-[1.6rem] w-auto" title="Your Cart"/>
+                        <img src="./images/shopping-cart.png" alt="cart" class="h-[1.6rem] w-auto" title="Your Cart" />
                     </div>
-                    <div class="hover:bg-gray-200 h-[3rem] w-[3rem] items-center flex rounded-full align-middle justify-center cursor-pointer">
-                        <img src="./images/user.png" alt="log-in" class="h-[1.6rem] w-auto" title="Profile"/>
+                    <div class="hover:bg-gray-200 h-[3rem] w-[3rem] items-center flex rounded-full align-middle justify-center cursor-pointer" onclick="goToLogin()">
+                        <a href="./login.html"><img src="./images/user.png" alt="log-in" class="h-[1.6rem] w-auto" title="Profile"/></a>
                     </div>
                 </div>
             </div>
 
 
-            <div class="section-1-imgage bg-[url('./images/section1img.jpg')] min-h-screen blur-lg bg-center bg-cover bg-no-repeat bg-fixed">
+            <div class="section-1-imgage bg-[url('./images/section1img.jpg')] min-h-screen blur-lg bg-center bg-cover bg-no-repeat bg-fixed mb-[1px]">
                 <!--nothing in this div just for bg-image-->
             </div>
             <div class="section-1-content translate-x-[0] translate-y-[-43rem] space-y-1 font-[Quicksand] h-[1vh]">
@@ -66,10 +67,10 @@
                                     Malaxy watch 1
                                 </span>
                                 <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus1">+</button>
+                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus1">+</button>
                                     <div class="text-[1.6rem] font-light" id = "itemCount1">1</div>
-                                    <button class="text-[2rem] mr-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus1">-</button>
-                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                    <button class="text-[2rem] mr-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus1">-</button>
+                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -85,10 +86,10 @@
                                     Malaxy watch 2
                                 </span>
                                 <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus2">+</button>
+                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus2">+</button>
                                     <div class="text-[1.6rem] font-light" id = "itemCount2">1</div>
-                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus2">-</button>
-                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus2">-</button>
+                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -104,10 +105,10 @@
                                     Malaxy watch 3
                                 </span>
                                 <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus3">+</button>
+                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus3">+</button>
                                     <div class="text-[1.6rem] font-light" id = "itemCount3">1</div>
-                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus3">-</button>
-                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus3">-</button>
+                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -123,10 +124,10 @@
                                     Malaxy watch 4
                                 </span>
                                 <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus4">+</button>
+                                    <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus4">+</button>
                                     <div class="text-[1.6rem] font-light" id = "itemCount4">1</div>
-                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus4">-</button>
-                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                    <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus4">-</button>
+                                    <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                         Add To Cart
                                     </button>
                                 </div>
@@ -160,10 +161,10 @@
                                         Kphone 16 pro
                                     </span>
                                     <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus5">+</button>
+                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus5">+</button>
                                         <div class="text-[1.6rem] font-light" id = "itemCount5">1</div>
-                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus5">-</button>
-                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus5">-</button>
+                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                             Add To Cart
                                         </button>
                                     </div>
@@ -179,10 +180,10 @@
                                         Malaxy S24 Ultra
                                     </span>
                                     <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus6">+</button>
+                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus6">+</button>
                                         <div class="text-[1.6rem] font-light" id = "itemCount6">1</div>
-                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus6">-</button>
-                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus6">-</button>
+                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                             Add To Cart
                                         </button>
                                     </div>
@@ -198,10 +199,10 @@
                                         Kqoo 12 pro
                                     </span>
                                     <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = " plus7">+</button>
+                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = " plus7">+</button>
                                         <div class="text-[1.6rem] font-light" id = "itemCount7">1</div>
-                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus7">-</button>
-                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus7">-</button>
+                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                             Add To Cart
                                         </button>
                                     </div>
@@ -217,10 +218,10 @@
                                         Kivo X100
                                     </span>
                                     <div class="purchase flex flex-row space-x-[0.5rem] justify-center items-center">
-                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)] " id = "plus8">+</button>
+                                        <button class="text-[2rem] bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center font-thin hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)] " id = "plus8">+</button>
                                         <div class="text-[1.6rem] font-light" id = "itemCount8">1</div>
-                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]" id = "minus8">-</button>
-                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.75)] active:bg-[rgb(255,255,255)]">
+                                        <button class="text-[2rem] font-thin bg-[#ffffff] rounded-full w-[2.3rem] h-[2.3rem] flex justify-center items-center hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]" id = "minus8">-</button>
+                                        <button class="rounded-full text-[1.3rem] border-white border-[0.02rem] w-[9rem] h-[2.3rem] bg-[rgb(255,255,255)] hover:bg-[rgba(253,253,253,0.55)] active:bg-[rgb(255,255,255)]">
                                             Add To Cart
                                         </button>
                                     </div>

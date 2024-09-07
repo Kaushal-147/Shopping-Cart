@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login @YourShop</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./loaderStyle.css">
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
+    <script src="./loginScritp.js"></script>
+</head>
+<body class="font-[Quicksand]" onload="removeLoader()">
+  
+    <!--loader-->
+    <div id="loader" class="center z-10"></div>
+    <!---------->
+
+    <div id="content" class="invisible">  
+        <div class="background-imgage bg-[url('./images/section1img.jpg')] min-h-screen blur-lg bg-center bg-cover bg-no-repeat bg-fixed mb-[-32.2rem]">
+            <!--nothing in this div just for bg-image-->
+        </div>    
+        <div class="flex justify-center items-center  flex-col translate-y-[-6rem]">
+
+            <!-- Login Box -->
+            <div class="bg-[#ffffff6f] p-6 rounded-[1rem] shadow-lg w-[26rem] ">
+                <div class="flex items-center justify-between mb-4">
+                    <a href="index.html" class="text-black text-sm font-semibold">Back</a>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex justify-center mb-4">
+                    <img src="./images/logo.png" alt="Logo" class="h-[3.5rem] w-auto">
+                </div>
+
+                <h2 class="text-center text-2xl font-bold mb-6">Log in</h2>
+
+                <!-- Email Input -->
+                <div class="mb-4">
+                    <label for="email" class="block text-black">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Email">
+                </div>
+
+                <!-- Password Input -->
+                <div class="mb-4">
+                    <label for="password" class="block text-black">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Password">
+                        <span class="absolute right-3 top-2 text-gray-400 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.54a9 9 0 0116.02 0M3 13a9 9 0 0018 0m-9 0v.01" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Stay Logged In -->
+                <div class="mb-6 flex items-center">
+                    <input type="checkbox" id="stay-logged-in" class="mr-2 h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+                    <label for="stay-logged-in" class="text-black">Stay logged in</label>
+                </div>
+            
+                <!-- Log In Button -->
+                <div class="button flex justify-center">
+                    <button class="w-[6rem] bg-[rgba(38,146,255,0.83)] text-black py-2 rounded-lg hover:bg-[rgba(38,146,255,0.65)] active:bg-[rgb(38,145,255)] transition duration-300">Log in</button>
+                </div>
+                <!-- Forgot Password and Sign Up Links -->
+                <div class="mt-4 text-center">
+                    <a href="#" class="text-black text-sm hover:underline">I forgot my password</a>
+                </div>
+                <div class="mt-2 text-center">
+                    <p class="text-gray-600 text-sm">Don’t have an account? <a href="#" class="text-black hover:underline">Sign up</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

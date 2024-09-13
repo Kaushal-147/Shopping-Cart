@@ -20,17 +20,35 @@ function changeVisibility()
 }
 
 //To check Email 
-function emailCheck()
+function inputCheck()
 {
-    let input = document.getElementById("email").value;
-    let cleanInput = input.trimEnd().toLowerCase();
-    if ( cleanInput.slice(-10) != "@gmail.com")
+    let email = document.getElementById("email").value;
+    let cleanEmail = email.trimEnd().toLowerCase();
+    let password = document.getElementById("password").value;
+
+    
+    if ( email == "" || email == null)
     {
-        alert("kindly Recheck Your Email");
-        console.log("hi")
-    }
-    else
+        alert("Email Field Can't Be Empty !");
+    } 
+    else if( password == "" || password == null)
     {
-        alert("sucsessfully submited ");
+        alert("Password Field Can't Be Empty !");
+    } else
+    {
+        if ( cleanEmail.slice(-10) != "@gmail.com")
+        {
+            alert("kindly Recheck Your Email !");
+        }
+        else if ( password.length < 4)
+        {
+            alert(" password should be more than 3 character !");
+        }
+        else
+        {
+            alert("sucsessfully submited!");
+            console.log("hi");
+            document.getElementById("email").reset();
+        }
     }
 }

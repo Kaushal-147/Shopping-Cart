@@ -48,7 +48,8 @@ function inputCheck()
         {
             alert("sucsessfully submited!");
             console.log("hi");
-            document.getElementById("email").reset();
+            document.getElementById("form").reset();
+            alert("Go Back And Enjoy Shopping !")
         }
     }
 }

@@ -10,12 +10,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
         <script src="script.js"></script>
+        <script src="./aboutus.js"></script>
         <title>YourShop</title>
     </head>
     <body onload="removeLoader()">
         <div id="loader" class="center "></div>
         <div class="min-h-screen invisible" id="content" >
 
+            <!-------------------------- NAV-BAR-------------------------------------------------->
 
             <div class="navBar flex flex-row justify-between h-[5rem] items-center sticky border-b-[0.1rem] border-gray-100 rounded-xl text-[1.1rem]">
                 <div class="logo ml-[2rem]">
@@ -30,7 +32,7 @@
                             <a href="#mobiles">Mobile</a> 
                         </li>
                         
-                        <li class="hover:text-black hover:bg-gray-200 rounded-full w-[6rem] h-[2rem] text-center align-middle content-center cursor-pointer">
+                        <li class="hover:text-black hover:bg-gray-200 rounded-full w-[6rem] h-[2rem] text-center align-middle content-center cursor-pointer" onclick="aboutus()">
                             About Us
                         </li>
                     </ul>
@@ -44,12 +46,13 @@
                     </div>
                 </div>
             </div>
-
+   
+            <!-------------------------- SECTION-1-------------------------------------------------->
 
             <div class="section-1-imgage bg-[url('./images/section1img.jpg')] min-h-screen blur-lg bg-center bg-cover bg-no-repeat bg-fixed mb-[-5rem]">
                 <!--nothing in this div just for bg-image-->
             </div>
-            <div class="section-1-content translate-x-[0] translate-y-[-37rem] space-y-1 font-[Quicksand] h-[1vh]" id="Watches">
+            <div class="section-1-content translate-x-[0] translate-y-[-35rem] space-y-1 font-[Quicksand] h-[1vh]" id="Watches">
                 <div class="watches px-[3rem] space-y-[0.6rem] font-[500] ">
                     <div class="text text-[1.7rem] pb-[3rem]">
                         Our Exlusive Watches
@@ -137,6 +140,9 @@
 
             <div class="bg-white h-[1vh] blur-sm">
             </div>
+
+
+            <!-------------------------- SECTION-2-------------------------------------------------->
 
 
             <div class="section-2-image bg-[url('./images/section2img.jpg')] min-h-screen blur-lg bg-center bg-no-repeat bg-cover bg-fixed mb-[-40rem] z-0">

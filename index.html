@@ -9,14 +9,27 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
-        <script src="script.js"></script>
-        <script src="./aboutus.js"></script>
+     
         <title>YourShop</title>
     </head>
     <body onload="removeLoader()">
         <div id="loader" class="center "></div>
-        <div class="min-h-screen invisible" id="content" >
-
+        
+        <!-------------------------ABOUT US POP-UP--------------------------------------------------->
+        <div class="abtus z-10 border-[0.2rem] border-gray-100 rounded-2xl translate-y-[10rem] bg-white translate-x-[41rem] h-[25rem] w-[20rem] flex-col pr-[1rem] hidden " id="about_us">
+            <div class="ml-[17rem] mt-[1rem] rounded-full bg-gray-200 flex items-center justify-center hover:bg-black hover:text-white cursor-pointer" onclick="closeabtus()">X</div>
+            <div class="pl-[4rem] pt-[4rem]">
+                <span> 
+                    <b> ABOUT US </b> 
+                </span>
+                <br>
+                <br>
+                <span> YourShop provides trust &<br>
+                       luxury to  our customers.     <br>
+                       we sell original products.</span>
+            </div>
+        </div> 
+        <div class="min-h-screen invisible " id="content" >
             <!-------------------------- NAV-BAR-------------------------------------------------->
 
             <div class="navBar flex flex-row justify-between h-[5rem] items-center sticky border-b-[0.1rem] border-gray-100 rounded-xl text-[1.1rem]">
@@ -234,7 +247,8 @@
                     </div>
             </div>
             <div class="copyright z-10 bg-white relative flex items-center justify-center h-[3.5rem] translate-y-[6rem]">© 2024 YourShop. All rights reserved.</div>
-
         </div>
+        <script src="script.js"></script>
+        <script src="./aboutus.js"></script>  
   </body>
 </html>

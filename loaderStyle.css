@@ -25,3 +25,13 @@
         transform: rotate(360deg);
     }
 }
+
+.abtus
+{
+    position: fixed;
+}
+
+#content 
+{
+    transition: filter 0.3s ease;
+}

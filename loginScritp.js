@@ -53,3 +53,24 @@ function inputCheck()
         }
     }
 }
+
+function toggleForm(isLogin) {
+    const signUpForm = document.getElementById('signUpForm');
+    const loginForm = document.getElementById('loginForm');
+    const formHeader = document.getElementById('formHeader');
+    const toggleButton = document.getElementById('toggleButton');
+
+    if (isLogin) {
+        signUpForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+        formHeader.textContent = 'Login';
+        toggleButton.textContent = "Don't have an account? Sign up";
+        toggleButton.setAttribute('onclick', 'toggleForm(false)');
+    } else {
+        signUpForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        formHeader.textContent = 'Sign up';
+        toggleButton.textContent = 'Already have an account? Login';
+        toggleButton.setAttribute('onclick', 'toggleForm(true)');
+    }
+}

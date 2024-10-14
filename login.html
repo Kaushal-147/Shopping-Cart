@@ -11,9 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"/>
     <script src="./loginScritp.js"></script>
+    <script src="./chatgpt-login.html"></script>
 </head>
 <body class="font-[Quicksand]" onload="removeLoader()">
-  
+
     <!--loader-->
     <div id="loader" class="center z-10"></div>
     <!---------->
@@ -24,8 +25,8 @@
         </div>    
         <div class="flex justify-center items-center  flex-col translate-y-[-2rem]">
 
-            <!-- Login Box -->
-            <div class="bg-[#ffffff6f] p-6 rounded-[1rem] shadow-lg w-[26rem] ">
+            <!-- Auth Box -->
+            <div class="bg-[#ffffff6f] p-6 rounded-[1rem] shadow-lg w-[26rem]">
                 <div class="flex items-center justify-between mb-4">
                     <a href="index.html" class="text-black text-sm font-semibold">Back</a>
                 </div>
@@ -35,19 +36,21 @@
                     <img src="./images/logo.png" alt="Logo" class="h-[3.5rem] w-auto">
                 </div>
 
-                <h2 class="text-center text-2xl font-bold mb-6">Sign up</h2>
-                <form id="form">
+                <!-- Header -->
+                <h2 id="formHeader" class="text-center text-2xl font-bold mb-6">Sign up</h2>
+
+                <!-- Sign-Up Form -->
+                <form id="signUpForm">
                     <!-- Username Input -->
-                    <div class="mb-4 ">
+                    <div class="mb-4">
                         <label for="userName" class="block text-black p-[0.6rem]">Name</label>
                         <input type="text" id="userName" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Write your Name...">
                     </div>
                     <!-- Email Input -->
-                    <div class="mb-4 ">
+                    <div class="mb-4">
                         <label for="email" class="block text-black p-[0.6rem]">Email</label>
                         <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Email">
                     </div>
-
                     <!-- Password Input -->
                     <div class="mb-4">
                         <label for="password" class="block text-black p-[0.6rem]">Create Password</label>
@@ -59,18 +62,41 @@
                         </div>
                     </div>
                 </form>
-                <!-- sign up Button -->
+
+                <!-- Login Form (Initially Hidden) -->
+                <form id="loginForm" class="hidden">
+                    <!-- Email Input -->
+                    <div class="mb-4">
+                        <label for="loginEmail" class="block text-black p-[0.6rem]">Email</label>
+                        <input type="email" id="loginEmail" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Email">
+                    </div>
+                    <!-- Password Input -->
+                    <div class="mb-4">
+                        <label for="loginPassword" class="block text-black p-[0.6rem]">Password</label>
+                        <div class="relative">
+                            <input type="password" id="loginPassword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Password">
+                            <span class="absolute right-[7px] top-2 text-gray-400 cursor-pointer" onclick="changeVisibility()">
+                                <img src="./images/show.png" alt="show" class="h-[1.5rem] w-auto " id="showLogin">
+                            </span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Button -->
                 <div class="button flex justify-center p-[2rem]">
-                    <button class="w-[6rem] bg-[rgba(38,146,255,0.83)] text-black py-2 rounded-lg hover:bg-[rgba(38,146,255,0.65)] active:bg-[rgb(38,145,255)] transition duration-300" onclick="inputCheck()">Sign up</button>
+                    <button id="authButton" class="w-[6rem] bg-[rgba(38,146,255,0.83)] text-black py-2 rounded-lg hover:bg-[rgba(38,146,255,0.65)] active:bg-[rgb(38,145,255)] transition duration-300" onclick="inputCheck()">Submit</button>
                 </div>
                  
-                <!-- NOTE -->
-                <div class="note">
-                    Note : we'll not sent you any unnecessary emails.
+                <!-- Toggle Between Login/SignUp -->
+                <div class="text-center text-sm">
+                    <button id="toggleButton" class="text-blue-500 underline" onclick="toggleForm(true)">Already have an account? Login</button>
                 </div>
 
+                <!-- NOTE -->
+                <div class="note mt-4 text-center">
+                    Note: We'll not send you any unnecessary emails.
+                </div>
             </div>
-
         </div>
     </div>
 

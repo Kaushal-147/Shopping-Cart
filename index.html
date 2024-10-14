@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="!scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,10 +12,10 @@
      
         <title>YourShop</title>
     </head>
-    <body onload="removeLoader()">
+    <body onload="removeLoader()" class="scroll-smooth">
         <div id="loader" class="center "></div>
         
-        <!-------------------------ABOUT US POP-UP--------------------------------------------------->
+        <!-------------------------ABOUT US POP-UP--------------------------------------------------------------------------------------------------------------------------->
         <div class="abtus z-10 border-[0.2rem] border-gray-100 rounded-2xl translate-y-[10rem] bg-white translate-x-[41rem] h-[25rem] w-[20rem] flex-col pr-[1rem] hidden " id="about_us">
             <div class="ml-[17rem] mt-[1rem] rounded-full bg-gray-200 flex items-center justify-center hover:bg-black hover:text-white cursor-pointer" onclick="closeabtus()">X</div>
             <div class="pl-[4rem] pt-[4rem]">
@@ -29,8 +29,9 @@
                        we sell original products.</span>
             </div>
         </div> 
+        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
         <div class="min-h-screen invisible " id="content" >
-            <!-------------------------- NAV-BAR-------------------------------------------------->
+        <!------------------------------------ NAV-BAR----------------------------------------------------------------------------------------------------------------->
 
             <div class="navBar flex flex-row justify-between h-[5rem] items-center sticky border-b-[0.1rem] border-gray-100 rounded-xl text-[1.1rem]">
                 <div class="logo ml-[2rem]">
@@ -60,7 +61,7 @@
                 </div>
             </div>
    
-            <!-------------------------- SECTION-1-------------------------------------------------->
+            <!---------------------------------------------------------- SECTION-1------------------------------------------------------------------------>
 
             <div class="section-1-imgage bg-[url('./images/section1img.jpg')] min-h-screen blur-lg bg-center bg-cover bg-no-repeat bg-fixed mb-[-5rem]">
                 <!--nothing in this div just for bg-image-->
@@ -155,7 +156,7 @@
             </div>
 
 
-            <!-------------------------- SECTION-2-------------------------------------------------->
+            <!-------------------------------------------------------------- SECTION-2------------------------------------------------------------------------------->
 
 
             <div class="section-2-image bg-[url('./images/section2img.jpg')] min-h-screen blur-lg bg-center bg-no-repeat bg-cover bg-fixed mb-[-40rem] z-0">
